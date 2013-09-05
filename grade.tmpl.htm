@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Knockout Tryouts!!</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src='node_modules/requirejs/require.js'></script>
+<script src='GradeViewModel.js'></script>
+
+Choose the Subject:
+<select data-bind="options: gradeList,
+                   optionsCaption: 'Select Subject...',
+                   optionsText: 'subjectAlias',
+                   value: chosenGrade">
+</select>
+
+<button data-bind="enable: chosenGrade,
+                   click: resetGrade">Clear
+</button>
+
+<p data-bind="with: chosenGrade">
+    Subject Chosen: <b data-bind="text: subject"></b>
+    <br/>
+    Grade Achieved: <span data-bind="text: grade"></span>
+</p>
+
+</body>
+</html>
